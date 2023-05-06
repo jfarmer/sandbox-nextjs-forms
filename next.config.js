@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  compress: false,
+  experimental: {
+    serverActions: true,
+  }
+}
 
 module.exports = nextConfig
