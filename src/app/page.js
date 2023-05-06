@@ -1,15 +1,14 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import kv from "@vercel/kv";
 
 export default function Page({ params }) {
   async function increment() {
     'use server';
-    return 0;
+
+    await kv.incr('count');
   }
 
   return (
     <form action={increment}>
-      {count}
       <button type="submit">Like</button>
     </form>
   );
